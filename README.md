@@ -3,7 +3,7 @@
 ## Getting Started
 
 This is a node.js word guess game about NBA. The whole game runs in terminal. Have fun!
-Let's checkout this [demo](#) to see what it is for.
+Let's checkout this [demo](https://drive.google.com/file/d/1jMmqmdnNealewPWMTznahz8Qb-p2LgEt/view) to see what it is for.
 
 ### Prerequisites
 
@@ -19,7 +19,7 @@ To get started please first follow the steps below
   - Once you press a key and make a guess the total guesses will minus one;
   - If it's correct, the key will show up; 
   - Otherwise it will stay as "_";
-- The round will continue until the guesses run out (`You lose :(`) or you spell the whole answer key correctly (`You win! :)`)
+- The round will continue until the guesses run out and `You lose :(` , or you spell the whole answer key correctly `You win! :)` !
 
 
 Additionally, what your the result of each round will be logged in the `log.txt` file. You can open and find them there.

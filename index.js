@@ -61,7 +61,7 @@ var input = function () {
     }
     else {
         //tell the user he losed
-        console.log("\x1b[32m\x1b[4m%s\x1b[0m", "You lose!");
+        console.log("\x1b[32m\x1b[4m%s\x1b[0m", "You lose! The anwer is '" + keysArr[index].key + "'");
         //log the result
         appendLog("LOSE | ANSWER: " + keysArr[index].key)
     }
