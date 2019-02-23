@@ -5,6 +5,9 @@ const Word = require('./word')
 const keysArr = require('./answer')
 // dependency for inquirer npm package
 var inquirer = require("inquirer");
+// dependency for fs npm package
+var fs = require("fs");
+
 
 
 
@@ -16,8 +19,8 @@ var random = function (arr) {
 
 //=======================================prompt function===========================================
 // Prompts the user for each guess and keeps track of the user's remaining guesses
-// variable we will use to count how many guesses left
-var guesses = 10;
+// variable we will use to count how many guesses left (starts from 12 total)
+var guesses = 12;
 
 var input = function () {
     // if guesses left > 0 continue to ask for another input
@@ -41,6 +44,8 @@ var input = function () {
             if (displayString.indexOf("_") === -1) {
                 //tell the user he won
                 console.log("\x1b[31m\x1b[4m%s\x1b[0m", "You win!")
+                //log the result
+                appendLog("WIN | ANSWER: " + keysArr[index].key)
             } else {
                 // else continue this round
                 // subtract one from the remaining guess and console.log it
@@ -55,9 +60,23 @@ var input = function () {
         // when the code has been run five times
     }
     else {
+        //tell the user he losed
         console.log("\x1b[32m\x1b[4m%s\x1b[0m", "You lose!");
+        //log the result
+        appendLog("LOSE | ANSWER: " + keysArr[index].key)
     }
 };
+
+//=======================================log append function===========================================
+function appendLog(log) {
+    fs.appendFile("./log.txt", log + '\r\n', function (err) {
+        // If an error was experienced we will log it.
+        if (err) {
+            console.log(err);
+        }
+
+    });
+}
 
 //======================================= !!!!! initiate the game !!!!!!! ===========================================
 //game starter
